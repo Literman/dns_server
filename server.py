@@ -94,7 +94,7 @@ class DNSServer():
         if reply:
             print(f"\n{key[0]}: CACHE response")
             reply.header.set_id(id)
-            add_records_to_cache(reply)
+            add_records_to_cache(reply) # wtf
             self.client_sock.sendto(reply.to_bytes(), self.client)
         else:
             del CACHE[key]
