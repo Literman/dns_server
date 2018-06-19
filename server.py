@@ -87,14 +87,16 @@ class DNSServer():
             self.client_sock.sendto(response_packet.to_bytes(), self.client)
             add_records_to_cache(response_packet)
         except socket.error:
-            print('Oops... something wrong')
+            print('Oops... Something wrong')
+        except Exception:
+            print('Oops... Bad request')
+
 
     def ask_cache(self, key, id):
         reply = self.get_from_cache(key, self.request)
         if reply:
             print(f"\n{key[0]}: CACHE response")
             reply.header.set_id(id)
-            add_records_to_cache(reply) # wtf
             self.client_sock.sendto(reply.to_bytes(), self.client)
         else:
             del CACHE[key]

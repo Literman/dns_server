@@ -7,5 +7,5 @@
     "python.linting.pydocstyleEnabled": false,
     "python.linting.pylamaEnabled": false,
     "python.linting.mypyEnabled": false,
-    "python.pythonPath": "D:\\Python\\Anaconda3\\python.exe"
+    "python.pythonPath": "C:\\Python\\Anaconda3\\python.exe"
 }
